@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document---this concept</title>
+</head>
+<body>
+  <p onclick="this.innerText='i am clicked.'">I am Paragraph.</p>
+    <script>
+        
+        const myObj = {
+            name: "sebelly",
+            getFullName: function(){
+                console.log(this);
+                return 'Ms.' + this.name;
+            } 
+        }
+    myObj.getFullName();
+    const anotherObj = {
+      name: 'maimoona'
+    }
+    anotherObj.getFullName = myObj.getFullName;
+    anotherObj.getFullName();
+
+    function add(a, b){
+      console.log(this);
+      return a + b;
+    }
+    add(2,3);
+
+  setTimeout(function(){
+    console.log(this);
+  },1000)
+
+    </script>
+</body>
+</html>
